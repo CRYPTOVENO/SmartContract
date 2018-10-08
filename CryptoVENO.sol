@@ -1,5 +1,13 @@
 pragma solidity ^0.4.18;
 
+/** TOKEN INFORMATION
+ * Welcome to CRYPTOVENO Project
+ * Name Token : CRYPTOVENO
+ * Symbol : VENO2
+ * Decimal : 8
+ * Total Supply : 10,000,000,000
+ * Website : https://cryptoveno.com
+
 /**
  * @title SafeMath
  * @dev Math operations with safety checks that throw on error
@@ -65,7 +73,7 @@ contract ERC20 is ERC20Basic {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-contract CryptoVENO is ERC20 {
+contract CRYPTOVENO is ERC20 {
     
     using SafeMath for uint256;
     address owner = msg.sender;
@@ -73,13 +81,13 @@ contract CryptoVENO is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = "Crypto VENO";
-    string public constant symbol = "VENO";
+    string public constant name = "CRYPTOVENO";
+    string public constant symbol = "VENO2";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;
     uint256 public totalDistributed = 0;    
-    uint256 public constant MIN_CONTRIBUTION = 1 ether / 200; // 0.005 Ether
+    uint256 public constant MIN_CONTRIBUTION = 1 ether / 100; // 0.01 Ether
     uint256 public tokensPerEth = 10000000e8;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
@@ -107,7 +115,7 @@ contract CryptoVENO is ERC20 {
     }
     
     
-    function CryptoVENO () public {
+    function CRYPTOVENO () public {
         owner = msg.sender;    
         distr(owner, totalDistributed);
     }
